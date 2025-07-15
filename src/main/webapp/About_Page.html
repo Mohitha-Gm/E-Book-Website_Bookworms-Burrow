@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/book-content-regular-24.png" type="image/png"/>
+        <title>About Page</title>
+        <style>
+            body{
+                margin:0px;
+                padding:0px;
+                font-family:'Montserrat';
+                background-image:url('images/background.jpg');
+                background-size:cover;
+            }
+            *{
+                box-sizing:border-box;
+            }
+            ul{
+                list-style:none;
+            }
+            a{
+                text-decoration: none;
+            }
+            button{
+                outline:none;
+                border:none;
+            }
+            input{
+                outline:none;
+                border:none;
+            }
+            .main{
+                width:100%;
+                height:768px;
+                position:relative;
+            }
+            nav{
+                display:flex;
+                align-items:center;
+                justify-content:space-around;
+                padding:0 30px;
+                background: color #10003d;
+                box-shadow:2px 2px 20px rgba(0, 0, 0, 0.514);
+                z-index:1;
+                width:100%;
+                position:fixed;
+                left:0px;
+                top:0px;
+            }
+            nav ul{
+                display:flex;
+                margin:0;
+                padding:0;
+            }
+            nav ul li a{
+                height:40px;
+                line-height:43px;
+                margin:8px;
+                padding:0px 7px;
+                display:flex;
+                font-size:0.8rem;
+                text-transform:uppercase;
+                font-weight:400;
+                color:#80e3b5;
+                letter-spacing: 1px;
+                transition:0.3s ease-in-out;
+            }
+            nav ul li a:hover{
+                border-radius:2px;
+                background-color:#5cfdb2;
+                color:#10003d;
+                box-shadow:2px 2px 20px rgba(1, 141, 83, 0.514);
+            }
+            .active{
+                background-color:#5cfdb2;
+                color:#10003d;
+                box-shadow:2px 2px 20px rgba(1, 141, 83, 0.514);
+            }
+            nav .menu-btn{
+                display:none;
+            }
+            .head-content{
+                display:flex;
+                align-items:center;
+                justify-content:space-around;
+                position:absolute;
+                left:50%;
+                top:50;
+                transform:translate(-50% , -50%);
+                width:90%;
+            }
+            .head-img{
+                width:500px;
+                height:400px;
+                margin:20px;
+            }
+            .head-img img{
+                width:100%;
+                height:100%;
+                object-fit:contain;
+                object-position: center;
+            }
+            .head-text{
+                width:500px;
+                margin:20px;
+            }
+            .head-text h1{
+                font-size:3.5rem;
+                line-height: 55px;
+                color:#ffffff;
+                letter-spacing:1px;
+                font-weight:700;
+                margin:0px;
+            }
+            .head-text p{
+                font-size: 0.9rem;
+                color:rgb(235, 235, 235);
+            }
+            .head-text span{
+                color:#5cfdb2;
+                text-decoration:none;
+            }
+            .head-btn{
+                width:140px;
+                height:40px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background-color: #80e3b5;
+                color:#10003d;
+                box-shadow:2px 2px 20px rgba(1, 141, 83, 0.514);
+                text-transform:uppercase;
+                transition:0.3s ease-in-out;
+                margin-top:20px;
+                border-radius: 3px;
+            }
+            .head-btn:hover{
+                background-color: #5cfdb2;
+            }
+            .about{
+                background-size:1000px;
+            }
+            .about-heading{
+                margin-top:60px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+            .about-heading h2{
+                line-height:55px;
+                font-size:2.2rem;
+                color:#ffffff;
+                letter-spacing:1px;
+                font-weight:700;
+                margin:0px;
+            }
+            .about-heading p{
+                font-size:0.9rem;
+                color:rgb(235, 235, 235);
+            }
+            .box-container{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-wrap:wrap;
+                margin:20px 30px;
+            }
+            .box{
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                flex-direction:column;
+                width:200px;
+                height:400px;
+                text-align:center;
+                background-color: #80e3b5;
+                box-shadow:2px 2px 20px rgba(1, 141, 83, 0.507);
+                padding:20px;
+                border-radius:10px;
+                margin:20px;
+                position:relative;
+                flex-grow:1;
+            }
+            .box-img{
+                height:90px;
+                margin:10px;
+            }
+            .box-font{
+                font-size:1.5rem;
+                color:#10003d;
+                letter-spacing:1px;
+                font-weight:700;
+            }
+            .box p{
+                font-size:0.9rem;
+                color:rgb(0, 4, 54);
+                display:block;
+                font-weight:500;
+                overflow:hidden;
+                max-width:500px;
+                text-overflow:ellipsis;
+            }
+            .box a{
+                width:150px;
+                height:40px;
+                align-items:center;
+                justify-content:center;
+                display:flex;
+                border:2px solid #10003d;
+                text-transform:uppercase;
+                margin:auto;
+                border-radius:5px;
+                font-weight:600;
+                font-size:0.9rem;
+                color:#10003d;
+                margin:0px;
+            }
+            .box a:hover{
+                background-color:#10003d;
+                color:#ffffff;
+                transition:all ease 0.3s;
+                box-shadow: 2px 2px 20px rgba(1, 141, 83, 0.507);
+            }
+            .contact{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+                margin:10px 0px;
+                margin-top:80px;
+                padding:30px 0px;
+            }
+            .contact-input{
+                width:400px;
+                height:50px;
+                display:flex;
+                background-color:#fff;
+                justify-content:center;
+                border-radius:50px;
+                box-shadow:2px 2px 20px rgba(27, 1, 141, 0.507);
+            }
+            .contact-input input{
+                width:100%;
+                background-color:transparent;
+                border:none;
+                outline:none;
+                text-align:center;
+                color:#10003d;
+            }
+            .contact-input a{
+                width:200px;
+                height:35px;
+                background-color:#80e3b5;
+                color:#10003d;
+                display:flex;
+                font-size:0.9rem;
+                align-items:center;
+                justify-content:center;
+                margin:auto 10px;
+                border-radius:20px;
+                font-weight:500;
+            }
+            .contact-input a:hover{
+                background-color: #5cfdb2;
+            }
+            h3{
+                color:white;
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section class="main">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="images/logo3.png">
+                </a>
+                <input class="menu-btn" type="checkbox" id="menu-btn">
+                <label class="menu-icon" for="menu-btn">
+                    <span class="nav-icon"></span>
+                </label>
+                <ul class="menu">
+                    <li><a href="Home_Page.html" >Home</a></li>
+                    <li><a href="#" class="active">About</a></li>
+                    <li><a href="Search_Page.html">Search</a></li>
+                    <li><a href="Contact_Page.html">Contact</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="head-content">
+                <div class="head-text">
+                <h1><span>What you'll achieve by these books..</span></h1>
+                <p>Reading books unlocks a world of knowledge, broadening perspectives, igniting creativity, and fostering personal growth. It cultivates empathy, sharpens intellect, and instills a lifelong love of learning. In essence, through books, we embark on a journey of enlightenment and self-discovery.</p>
+                <a href="Search_Page.html" class="head-btn">CLICK TO READ</a>
+            </div>
+            <div class="head-img">
+                <img src="images/student.png">
+            </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="about-heading">
+                <h2>ABOUT</h2>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <font><b>Experience</b></font>
+                    <p>Reading ebooks offers a dynamic learning experience, blending multimedia content and interactive features to engage readers deeply. With customizable options and accessibility across devices, ebooks provide personalized learning opportunities anytime, anywhere.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="box">
+                    <font><b>Motivation</b></font>
+                    <p>Reading ebooks motivates by offering access to diverse content, engaging multimedia features, and opportunities for personal growth. The interactive nature and accessibility of ebooks inspire curiosity, and connect readers with communities, creating a dynamic and motivating reading experience.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="box">
+                    <font><b>Goals</b></font>
+                    <p>Reading ebooks sparks self-discovery and goal-setting. Exploring diverse topics reveals new passions, while inspiring stories motivate defining aspirations. Reflection prompts clarity on values, and practical advice aids in taking actionable steps. Engaging with ebook communities offers support. </p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="box">
+                    <font><b>Vision</b></font>
+                    <p>Our ebook website homepage envisions empowering readers with seamless access to curated literature, fostering a vibrant community of lifelong learners. Through innovation and accessibility, we aim to redefine the digital reading experience, inspiring connections and personal growth.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="box">
+                    <font><b>Mission</b></font>
+                    <p>Our ebook website homepage aims to empower readers with curated literature, fostering a vibrant community of lifelong learners. We provide a seamless, immersive experience, guiding users through personalized recommendations. Through innovation and social impact initiatives, we redefine the digital reading experience and make a positive difference in literature.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="box">
+                    <font><b>Strategy</b></font>
+                    <p>Our ebook website homepage strategy focuses on user-centric design, content curation, and accessibility. We optimize navigation, offer diverse content, and ensure responsiveness. Through data-driven optimization, strategic promotions, and community engagement, we drive traffic and enhance user experience. We prioritize partnerships, innovation, and social responsibility to stay competitive and relevant.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+            </div>
+        </section><br><br><br><br><br><br><br><br><br><br>
+        <section class="author">
+            <div class="head-content">
+                <div class="head-text">
+                <h1><span>The Author..</span></h1>
+                <p>Our ebook website proudly hosts an extensive collection of books penned by a diverse array of authors. From celebrated literary giants to emerging talents, our platform showcases the rich tapestry of voices and perspectives that enrich the world of literature. Whether you're drawn to the timeless classics of renowned authors or eager to discover the fresh insights of up-and-coming writers, our curated selection offers something for every reader. Explore the works of your favorite authors or venture into uncharted literary territory — the journey awaits within the pages of our digital library.</p>
+                <a href="Search_Page.html" class="head-btn">CLICK TO READ</a>
+            </div>
+            <div class="head-img">
+                <img src="images/author.jpg">
+            </div>
+
+        </section><br><br><br><br><br>
+        <section class="contact">
+            <h3>Subscribe To Our Newsletter</h3>
+            <div class="contact-input">
+                <input type="email" placeholder="Example@gmail.com">
+                <a href="Search_Page.html" >Continue..</a>
+            </div>
+        </section>
+    </body>
+</html>

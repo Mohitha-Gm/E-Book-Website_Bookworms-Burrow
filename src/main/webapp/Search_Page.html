@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/book-content-regular-24.png" type="image/png"/>
+        <title>Search Page</title>
+        <style>
+            body{
+                margin:0px;
+                padding:0px;
+                font-family:'Montserrat';
+                background-image:url('images/background.jpg');
+                background-size:cover;
+            }
+            *{
+                box-sizing:border-box;
+            }
+            ul{
+                list-style:none;
+            }
+            a{
+                text-decoration: none;
+            }
+            button{
+                outline:none;
+                border:none;
+            }
+            input{
+                outline:none;
+                border:none;
+            }
+            .main{
+                width:100%;
+                height:768px;
+                position:relative;
+            }
+            form{
+                position: relative;
+                top: 10%;
+                left: 70%;
+                transform: translate(-50%,-50%);
+                transition: all 1s;
+                width: 50%;
+                height: 50px;
+                background: white;
+                box-sizing: border-box;
+                border-radius: 25px;
+                border: 4px solid white;
+                padding: 5px;
+            }
+
+            form input{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;;
+                height: 42.5px;
+                line-height: 30px;
+                outline: 0;
+                border: 0;
+                display: none;
+                font-size: 1em;
+                border-radius: 20px;
+                padding: 0 20px;
+            }
+
+            .fa{
+                box-sizing: border-box;
+                padding: 10px;
+                width: 42.5px;
+                height: 42.5px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-radius: 50%;
+                color: #80e3b5;
+                text-align: center;
+                font-size: 1.2em;
+                transition: all 1s;
+            }
+
+            form:hover{
+                width: 300px;
+                cursor: pointer;
+            }
+
+            form:hover input{
+                display: block;
+            }
+
+            form:hover .fa{
+                background: #80e3b5;
+                color: white;
+            }
+            nav{
+                display:flex;
+                align-items:center;
+                justify-content:space-around;
+                padding:0 30px;
+                background: color #10003d;
+                box-shadow:2px 2px 20px rgba(0, 0, 0, 0.514);
+                z-index:1;
+                width:100%;
+                position:fixed;
+                left:0px;
+                top:0px;
+            }
+            nav ul{
+                display:flex;
+                margin:0;
+                padding:0;
+            }
+            nav ul li a{
+                height:40px;
+                line-height:43px;
+                margin:8px;
+                padding:0px 7px;
+                display:flex;
+                font-size:0.8rem;
+                text-transform:uppercase;
+                font-weight:400;
+                color:#80e3b5;
+                letter-spacing: 1px;
+                transition:0.3s ease-in-out;
+            }
+            nav ul li a:hover{
+                border-radius:2px;
+                background-color:#5cfdb2;
+                color:#10003d;
+                box-shadow:2px 2px 20px rgba(1, 141, 83, 0.514);
+            }
+            .active{
+                background-color:#5cfdb2;
+                color:#10003d;
+                box-shadow:2px 2px 20px rgba(1, 141, 83, 0.514);
+            }
+            .box-container{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-wrap:wrap;
+                margin:20px 30px;
+            }
+            .box{
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                flex-direction:column;
+                width:200px;
+                height:400px;
+                text-align:center;
+                background-color: #80e3b5;
+                box-shadow:2px 2px 20px rgba(1, 141, 83, 0.507);
+                padding:20px;
+                border-radius:10px;
+                margin:50px;
+                position:relative;
+                flex-grow:1;
+            }
+            .box-img{
+                height:90px;
+                margin:10px;
+            }
+            .box-font{
+                font-size:1.5rem;
+                color:#10003d;
+                letter-spacing:1px;
+                font-weight:700;
+            }
+            .box p{
+                font-size:0.9rem;
+                color:rgb(0, 4, 54);
+                display:block;
+                font-weight:500;
+                overflow:hidden;
+                max-width:500px;
+                text-overflow:ellipsis;
+            }
+            .box a{
+                width:150px;
+                height:40px;
+                align-items:center;
+                justify-content:center;
+                display:flex;
+                border:2px solid #10003d;
+                text-transform:uppercase;
+                margin:auto;
+                border-radius:5px;
+                font-weight:600;
+                font-size:0.9rem;
+                color:#10003d;
+                margin:0px;
+            }
+            .box a:hover{
+                background-color:#10003d;
+                color:#ffffff;
+                transition:all ease 0.3s;
+                box-shadow: 2px 2px 20px rgba(1, 141, 83, 0.507);
+            }
+            span{
+                color:#5cfdb2;
+                text-decoration:none;
+            }
+            .contact{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+                position:relative;
+                top:600px;
+                margin:10px 0px;
+                margin-top:80px;
+                padding:30px 0px;
+            }
+            .contact-input{
+                width:400px;
+                height:50px;
+                display:flex;
+                background-color:#fff;
+                justify-content:center;
+                border-radius:50px;
+                box-shadow:2px 2px 20px rgba(27, 1, 141, 0.507);
+            }
+            .contact-input input{
+                width:100%;
+                background-color:transparent;
+                border:none;
+                outline:none;
+                text-align:center;
+                color:#10003d;
+            }
+            .contact-input a{
+                width:200px;
+                height:35px;
+                background-color:#80e3b5;
+                color:#10003d;
+                display:flex;
+                font-size:0.9rem;
+                align-items:center;
+                justify-content:center;
+                margin:auto 10px;
+                border-radius:20px;
+                font-weight:500;
+            }
+            .contact-input a:hover{
+                background-color: #5cfdb2;
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section class="main">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="images/logo3.png">
+                </a>
+                <ul class="menu">
+                    <li><a href="Home_Page.html">Home</a></li>
+                    <li><a href="About_Page.html">About</a></li>
+                    <li><a href="#" class="active">Search</a></li>
+                    <li><a href="Contact_Page.html">Contact</a></li>
+                    <li><a href="Profile_Page.html">Profile</a></li>
+                </ul>
+            </nav><br><br><br>
+            <br>
+            <form action="index1.jsp" method="post" target="_blank">
+                <input formtarget="_blank" type="search" name = "search" id ="search" placeholder="Search here ...">
+                <i class="fa fa-search"></i>
+            </form>
+            <h1><span>Some of the Books You can give a look..</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="images/intro_to_probability1.jpeg">
+                    <p>Introduction to Probability : 2nd Edition by Dimitri P.Bertsekas and John N. Tsitsiklis</p>
+                    <a href="subhash/math1.html" target="_blank">Click to View</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/c_2.jpeg">
+                    <p>The C Programming Language : 2nd Edition by Brian W.Kernighan and Dennis M. Ritchie</p>
+                    <a href="subhash/h1.html" target="_blank">Click to View</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/maths_2.jpeg">
+                    <p>Introduction to Applied Linear Algebra : By Stephen Boyd and Lieven Vandenberghe</p>
+                    <a href="subhash/h2.html" target="_blank">Click to View</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/maths_4.jpeg">
+                    <p>Applied Statistics and Probability for Engineers: 3rd Edition By Douglas C. Montgomery and George C. Runger</p>
+                    <a href="subhash/h3.html" target="_blank">Click to View</a>
+                </div>
+                <div class="box">
+                    <img src="images/maths_6.jpeg">
+                    <p>Advanced Engineering Mathematics : 10th Edition By Erwin Kreyszig, Herbert Kreyszig and Edward J. Norminton</p>
+                    <a href="subhash/h4.html" target="_blank" id="button">Click to View</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/physics_2.jpeg">
+                    <p>Vector Mechanics for Engineers, Statics and Dynamics : 11th Edition By Beer, Johnson, Mazurek, Cornwell</p>
+                    <a href="subhash/h5.html" target="_blank">Click to View</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/discrete_2.jpeg">
+                    <p>Discrete Mathematics and It's Applications : 8th Edition By Kenneth H. Rosen</p>
+                    <a href="subhash/h6.html" target="_blank">Click to View</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/java_2.jpeg">
+                    <p>JAVA: The Complete Reference : 9th Edition By Herbert Schildt</p>
+                    <a href="subhash/h7.html" target="_blank">Click to View</a>
+                </div>
+                <div class="box">
+                    <img src="images/ml4.jpeg">
+                    <p>Deep Generative Modeling:
+                        An Overview of Recent Advances in Likelihood-based Models and an
+                        Application to 3D Point Cloud Generation.Shams Methnani
+                    </p>
+                    <a href="subhash/h8.html" target="_blank">Click to View</a>
+                </div>
+                <div class="box">
+                    <img src="images/ml5.jpeg">
+                    <p>Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow Concepts, Tools, and Techniques to Build Intelligent Systems
+                    </p>
+                    <a href="subhash/h9.html" target="_blank">Click to View</a>
+                </div>
+                <div class="box">
+                    <img src="images/ml6.jpeg">
+                    <p>Deep Generative Modeling:
+                        An Overview of Recent Advances in Likelihood-based Models and an
+                        Application to 3D Point Cloud Generation.Shams Methnani
+                    </p>
+                    <a href="subhash/h10.html" target="_blank">Click to View</a>
+                </div>
+                <div class="box">
+                    <img src="images/ml4.jpeg">
+                    <p>Deep Generative Modeling:
+                        An Overview of Recent Advances in Likelihood-based Models and an
+                        Application to 3D Point Cloud Generation.Shams Methnani
+                    </p>
+                    <a href="subhash/h11.html" target="_blank">Click to View</a>
+                </div>
+            </div>
+        </section><br><br><br><br><br><br>
+        <br>
+        <br>
+        <br>
+
+        <section class="contact">
+            <h3 style="color:white">For more books, Sign in here</h3>
+            <div class="contact-input">
+                <input type="email" placeholder="Example@gmail.com">
+                <a href="Search_Page.html" >Continue..</a>
+            </div>
+        </section>
+    </body>
+
+</html>

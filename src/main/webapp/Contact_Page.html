@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/book-content-regular-24.png" type="image/png"/>
+    <title>Contact Page</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            font-family:'Montserrat';
+            background-image:url('images/background.jpg');
+            background-size:cover;
+        }
+        *{
+            box-sizing:border-box;
+        }
+        ul{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+        }
+        button{
+            outline:none;
+            border:none;
+        }
+        input{
+            outline:none;
+            border:none;
+        }
+        .main{
+            width:100%;
+            height:768px;
+            position:relative;
+        }
+        nav{
+            display:flex;
+            align-items:center;
+            justify-content:space-around;
+            padding:0 30px;
+            background: color #10003d;
+            box-shadow:2px 2px 20px rgba(0, 0, 0, 0.514);
+            z-index:1;
+            width:100%;
+            position:fixed;
+            left:0px;
+            top:0px;
+        }
+        nav ul{
+            display:flex;
+            margin:0;
+            padding:0;
+        }
+        nav ul li a{
+            height:40px;
+            line-height:43px;
+            margin:8px;
+            padding:0px 7px;
+            display:flex;
+            font-size:0.8rem;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#80e3b5;
+            letter-spacing: 1px;
+            transition:0.3s ease-in-out;
+        }
+        nav ul li a:hover{
+            border-radius:2px;
+            background-color:#5cfdb2;
+            color:#10003d;
+            box-shadow:2px 2px 20px rgba(1, 141, 83, 0.514);
+        }
+        .active{
+            background-color:#5cfdb2;
+            color:#10003d;
+            box-shadow:2px 2px 20px rgba(1, 141, 83, 0.514);
+        }
+        .head-content{
+            display:flex;
+            align-items:left;
+            justify-content:space-around;
+            position:absolute;
+            left:25%;
+            top:50;
+            transform:translate(-50% , -50%);
+            width:90%;
+        }
+        .head-text{
+            width:500px;
+        }
+        .head-text h2{
+            font-size:3.5rem;
+            line-height: 55px;
+            color:#ffffff;
+            letter-spacing:1px;
+            font-weight:700;
+            margin:0px;
+        }
+        span{
+            color:#5cfdb2;
+            text-decoration:none;
+        }
+        body {
+            font-family: 'Montserrat';
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 700px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            width: 200px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 8px;
+            border-radius: 3px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        .images a img {
+            height: auto;
+            width: 80px;
+        }
+        .contact{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+            margin:10px 0px;
+            margin-top:80px;
+            padding:30px 0px;
+        }
+        .contact-input{
+            width:400px;
+            height:50px;
+            display:flex;
+            background-color:#fff;
+            justify-content:center;
+            border-radius:50px;
+            box-shadow:2px 2px 20px rgba(27, 1, 141, 0.507);
+        }
+        .contact-input input{
+            width:100%;
+            background-color:transparent;
+            border:none;
+            outline:none;
+            text-align:center;
+            color:#10003d;
+        }
+        .contact-input a{
+            width:200px;
+            height:35px;
+            background-color:#80e3b5;
+            color:#10003d;
+            display:flex;
+            font-size:0.9rem;
+            align-items:center;
+            justify-content:center;
+            margin:auto 10px;
+            border-radius:20px;
+            font-weight:500;
+        }
+        .contact-input a:hover{
+            background-color: #5cfdb2;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="main">
+        <nav>
+            <a href="#" class="logo">
+                <img src="images/logo3.png">
+            </a>
+            <ul class="menu">
+                <li><a href="Home_Page.html">Home</a></li>
+                <li><a href="About_Page.html">About</a></li>
+                <li><a href="Search_Page.html">Search</a></li>
+                <li><a href="#" class="active">Contact</a></li>
+                <li><a href="Profile_Page.html">Profile</a></li>
+            </ul>
+        </nav>
+        <br><br><br>
+        <h1 style="align-items: flex-start;"><center><span>Write Us Anything..</span></center></h1>
+        <div class="container">
+            <div>
+                <form action="index.jsp" method="post">
+                <div class="form-group">
+                    <label  for="username">Username</label>
+                    <input type="text" id="username" name="username1" required>
+                    <label for="Email">Email</label>
+                    <input type="text" id="Email" name="FEmail" required>
+                    <label for="Subject">Subject</label>
+                    <input type="text" id="Subject" name="Subject" required>
+                    <label for="Message">Message</label>
+                    <input type="text" id="Message" name="Message" required>
+                    <br>
+                    <a href="Contact_Page.html"><button type="submit">SUBMIT</button></a>
+                    <h4 id="demo"></h4>
+                </div>
+                </form>
+            </div>
+            <hr>
+            <div>
+                <p><b>Address:</b><br>
+                1234 Main St<br>
+               
+
+ City,State 12345
+                </p>
+                <p><b>Phone:</b><br>
+                555-555-5555
+                </p>
+                <p><b>Email:</b><br>
+                info@example.com
+                </p>
+                <p><b>Connect book socials:</b><br>
+                    <div class="images">
+                        <a href="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-0.png">
+                            <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-0.png">
+                        </a>
+                        <a href="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-3.png">
+                            <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-3.png">
+                        </a>
+                        <a href="https://www.pngkey.com/png/full/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png">
+                            <img src="https://www.pngkey.com/png/full/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png">
+                        </a>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h3>Subscribe To Our Newsletter</h3>
+        <div class="contact-input">
+            <input type="email" placeholder="Example@gmail.com">
+            <a href="Search_Page.html" >Continue..</a>
+        </div>
+    </section>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.form-group');
+
+    form.addEventListener('submit', function(event) {
+
+        event.preventDefault();
+
+        // Fetch input values
+        const username = document.getElementById('username1').value;
+        const email = document.getElementById('FEmail').value;
+        const subject = document.getElementById('Subject').value;
+        const message = document.getElementById('Message').value;
+
+        // Simple validation
+        if (username.trim() === '' || email.trim() === '' || subject.trim() === '' || message.trim() === '') {
+            alert('Please fill in all fields.');
+            return;
+        }
+        else{
+        document.getElementById('demo').innerHTML='Form Submitted';
+        document.getElementById('demo').style.background-color='green';
+        document.getElementById('demo').style.color='white';
+        }
+    });
+});
+</script>
+</html>
